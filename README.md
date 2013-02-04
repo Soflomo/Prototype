@@ -86,6 +86,14 @@ This will render a link like this:
 <a href="/hello-world">Click me</a>
 ```
 
+Why?
+---
+You might ask why we built this module and did not use a micro framework like Silex. Or, why we do not start in Zend Framework 2 directly.
+
+To answer the first, micro frameworks are hard to combine with existing Zend Framework 2 applications. We (at Soflomo) need a way to create prototypes also for existing applications. If we prototype a new design for a new module, the existing site with existing designs and existing modules should be kept intact.
+
+However, "normal" Zend Framework 2 configuration is quite some work if you only want to connect routes with view scripts. Frontend developers can easily copy/paste above code for a new module and they are up and running. It simply costs too much time and effort to use the existing nexted routes, create controllers, actions, make them loadable via configuration, fetch the view template from the route match options and return a correctly configured view model. For fast protyping, you now just add four lines for a page name, route and view script and it Just Works (tm).
+
 Development
 ---
 `Soflomo\Prototype` is intended to create prototypes really fast, but this module is by no means intended for production usage. It is (at this moment) not tested, not stable and there are no guarantees it is bug-free. Use at your own risk!
