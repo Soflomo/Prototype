@@ -1,0 +1,31 @@
+{
+    "name": "soflomo/prototype",
+    "description": "Small module to start fast prototyping of html pages in Zend Framework 2",
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "keywords": [
+        "zf2",
+        "prototype",
+        "mockup"
+    ],
+    "homepage": "https://github.com/Soflomo/Prototype",
+    "authors": [
+        {
+            "name": "Jurian Sluiman",
+            "email": "jurian@soflomo.com",
+            "homepage": "http://soflomo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3.",
+        "zendframework/zendframework": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Soflomo\\Prototype": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
