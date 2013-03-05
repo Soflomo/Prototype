@@ -42,6 +42,7 @@
 namespace Soflomo\Prototype;
 
 use Zend\EventManager\EventInterface;
+use Zend\Http\Request as HttpRequest;
 use Zend\Loader;
 use Zend\ModuleManager\Feature;
 
@@ -71,8 +72,12 @@ class Module implements
         $app = $e->getApplication();
         $sm  = $app->getServiceManager();
 
+        if (!$app->getRequest() instanceof HttpRequest) {
+            return;
+        }
+
         $config = $sm->get('config');
-        $config  = $config['soflomo_prototype'];
+        $config = $config['soflomo_prototype'];
         if (isset($config['pages']) && is_array($config['pages'])) {
             $routes = array();
 
