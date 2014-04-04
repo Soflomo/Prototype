@@ -82,8 +82,9 @@ class Module implements
             $routes = array();
 
             foreach ($config['pages'] as $name => $page) {
+                $type = (array_key_exists('type', $page)) ? $page['type'] : 'literal';
                 $routes[$name] = array(
-                    'type'    => 'literal',
+                    'type'    => $type,
                     'options' => array(
                         'route'    => $page['route'],
                         'defaults' => array(

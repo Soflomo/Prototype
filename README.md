@@ -86,6 +86,20 @@ This will render a link like this:
 <a href="/hello-world">Click me</a>
 ```
 
+### Parametrized routes
+
+`Soflomo\Prototype` supports route parameters with the segment type route in Zend Framework 2. This means you could have a route like `/foo/bar/:id`. By default, the module only uses literal routes to match the exact url. This is faster, but less flexible. You can specify to have the segment type by an additional `type` key:
+
+```
+'homepage' => array(
+    'type'     => 'segment',
+    'route'    => '/foo/bar/:id',
+    'template' => 'mockup/foo-bar'
+),
+```
+
+These routes types are extremely useful when dealing with existing applications. If you have an application where you deal with parametrized routes, you want to have a parametrized route for your mockup page as well. This way, you could always navigate back to your real application when a user vists the mocked page.
+
 Why?
 ---
 You might ask why we built this module and did not use a micro framework like Silex. Or, why we do not start in Zend Framework 2 directly.
